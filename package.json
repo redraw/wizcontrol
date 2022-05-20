@@ -1,14 +1,15 @@
 {
-  "name": "electron-quick-start",
+  "name": "wizcontrol",
   "version": "1.0.0",
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make"
+    "start": "electron .",
+    "postinstall": "electron-builder install-app-deps",
+    "release": "electron-builder --mac --windows --linux --publish always",
+    "release:linux": "electron-builder --linux --publish always"
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/redraw/wizcontrol",
   "keywords": [
     "Electron",
     "quick",
@@ -19,8 +20,10 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron-reload": "^2.0.0-alpha.1",
-    "electron-prebuilt-compile": "8.2.0"
+    "electron": "^18.2.4",
+    "electron-builder": "^23.0.3",
+    "electron-prebuilt-compile": "8.2.0",
+    "electron-reload": "^2.0.0-alpha.1"
   },
   "dependencies": {
     "tweakpane": "^3.0.8",
